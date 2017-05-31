@@ -17,7 +17,7 @@ val myOp = for (p <- myPairs) yield {f(p._1, p._2)}
 myOp
 }
 
-val elementwiseAddition = arrayOp(myW, myI, _ + _)
+val elementwiseAddition = arrayOp(myW, myI, _ + _) 
 
 val elementwiseMultiplication = arrayOp(myW, myI, _ * _)
 
@@ -36,3 +36,15 @@ elementwiseMultiplication
 val testMultipl = arrayOpMultipl(myW, myI)
 
 }
+
+/*
+References:
+ Martin Odersky et al., 2017, Functional Programming Principles in Scala, Coursera
+ Jason Swartz, 2015, Learning Scala - Practical Functional Programming for the JVM, O'Reilly
+ Andrew W. Trask, 2017, Grokking Deep Learning, Manning
+ */
+
+
+
+
+
