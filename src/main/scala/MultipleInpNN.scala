@@ -21,4 +21,18 @@ val elementwiseAddition = arrayOp(myW, myI, _ + _)
 
 val elementwiseMultiplication = arrayOp(myW, myI, _ * _)
 
+def arrayOpAdd (myWeights: Array[Double], myInputs: Array[Double]) : Array[Double] = {
+val elementwiseAddition = arrayOp(myWeights, myInputs, _ + _)
+elementwiseAddition
+}
+
+val testAdd = arrayOpAdd(myW, myI)
+
+def arrayOpMultipl ((myWeights: Array[Double], myInputs: Array[Double]) : Array[Double] = {
+val elementwiseMultiplication = arrayOp(myWeights, myInputs, _ * _)
+elementwiseMultiplication
+}
+
+val testMultipl = arrayOpMultipl(myW, myI)
+
 }
