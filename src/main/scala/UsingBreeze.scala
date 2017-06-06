@@ -6,6 +6,8 @@ https://github.com/scalanlp/breeze/wiki/Linear-Algebra-Cheat-Sheet
 import breeze.linalg._
 import breeze.numerics._
 
+object UsingBreeze {
+
 // zero matrix of the form: a(2,3) 
 val myZeros = DenseMatrix.zeros[Double](2,3)
 
@@ -61,9 +63,26 @@ case (i,j) => i+j
 
 val vectFromArray = new DenseVector(Array(1,2,3,4))
 
-// matrix creation form array
+// matrix creation from array
 
-val matrixFromArr = new DenseMatrix(2,3, Array(11,21,12,22,31,32))
+val matrixFromArr = new DenseMatrix(2,3, Array(11,21,12,22,31,32)) //creates it column by column
+
+// vector of 4 random elements from 0 to 1
+
+val randVect = DenseVector.rand(4)
+
+//matrix of shape (2,3) of random elements from 0 to 1
+
+val randMatrix = DenseMatrix.rand(2,3)
+
+
+}
+
+/*
+ read matrices from files with breeze.linalg.csvread function
+ write matrices to files with breeze.linalg.csvwrite function
+*/
+
 
 
  
