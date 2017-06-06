@@ -55,11 +55,4 @@ csvwrite(new File("x_matrix.csv"), X)
 
 val X2 = csvread(new File("x_Matrix.csv"))
 
-
- 
-
-
-
-
-
 }
