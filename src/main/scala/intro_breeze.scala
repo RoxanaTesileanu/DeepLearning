@@ -12,12 +12,12 @@ val pmfXs = x map {poi.probabilityOf(_)}
 
 val gau = Gaussian(0.0, 1.0)
 
-val y = gau.sample(20)
+val y1 = gau.sample(20)
 
-val logPdfYs= y map { gau.logPdf(_)}
+val logPdfYs= y1 map { gau.logPdf(_)}
 
 
-val v= DenseVector(y.toArray) // create a Vector out of the sample
+val v= DenseVector(y1.toArray) // create a Vector out of the sample
 val exBitVect= v >:> 0.0 // returns the indexes of the elements for which the Boolean expression is true
 
 val exBooleanResult = (v >:> 0.0).toArray //returns the Boolean result for each element of the array
@@ -38,7 +38,7 @@ val N = 1000
 val P = 2
 val XX = new DenseMatrix(N,P, gau.sample(N*P).toArray)
 
-val X = DenseMatrix.horzcat(DenseVector.ones[Double](N), XX)
+val X = DenseMatrix.horzcat(DenseVector.ones[Double](N).toDenseMatrix.t, XX)
 
 val b0=linspace(1.0,2.0,P+1)
 val y0 = X*b0
@@ -49,7 +49,7 @@ val b=X\y //computed using the QR-decomposition of X
 
 //writing to file and reading data from file
 
-import java.io.file
+import java.io.File
 
 csvwrite(new File("x_matrix.csv"), X)
 
