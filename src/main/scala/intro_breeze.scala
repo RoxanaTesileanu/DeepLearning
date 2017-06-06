@@ -24,5 +24,42 @@ val exBooleanResult = (v >:> 0.0).toArray //returns the Boolean result for each 
 
 val m = new DenseMatrix(5,4,linspace(1.0,20.0, 20).toArray) // the elements are arranged column-by-column
 
+val sumCols = sum(m(::,*))
+val sumRows = sum(m(*,::))
+
+val n = m.t
+
+val o = n*m //result o has the shape (4,4) 
+val p= m*n //result p has the shape (5,5)
+
+//application
+
+val N = 1000
+val P = 2
+val XX = new DenseMatrix(N,P, gau.sample(N*P).toArray)
+
+val X = DenseMatrix.horzcat(DenseVector.ones[Double](N), XX)
+
+val b0=linspace(1.0,2.0,P+1)
+val y0 = X*b0
+
+val y = y0 + DenseVector(gau.sample(1000).toArray)
+
+val b=X\y //computed using the QR-decomposition of X
+
+//writing to file and reading data from file
+
+import java.io.file
+
+csvwrite(new File("x_matrix.csv"), X)
+
+val X2 = csvread(new File("x_Matrix.csv"))
+
+
+ 
+
+
+
+
 
 }
