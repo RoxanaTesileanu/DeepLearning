@@ -5,6 +5,7 @@ import breeze.stats.distributions._
 import breeze.linalg._
 import breeze.plot._	//no need to add breeze-viz to the bild.sbt file
 
+object MyFigure{
 val fig = Figure("My Figure")
 fig.width = 1000
 fig.height = 800
@@ -18,3 +19,5 @@ fig.refresh
 fig.saveas("hist.pdf")
 
 
+
+}
