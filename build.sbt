@@ -4,7 +4,7 @@ libraryDependencies ++= Seq(
 "org.specs2" % "specs2-core_2.11" % "3.5" % "test",
 "org.scalanlp" % "breeze_2.11" % "0.13.1",
 "darrenjw" %% "scala-glm" % "0.2",
-”org.ddahl” %% ”rscala” % ”2.0.1”)
+"com.cra.figaro" % "figaro" % "2.1.0.0")
 
 resolvers ++= Seq("scalaz-bintray" at "http://dl.bintray.com/scalaz/releases",
 "Newcastle mvn repo" at "https://www.staff.ncl.ac.uk/d.j.wilkinson/mvn/")
